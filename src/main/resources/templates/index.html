@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management App</title>
+    <link rel="shortcut icon" type="image/png" href="img/logo.png" >
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+
+</head>
+<body>
+
+<header style="color:white; font-size: 20px;  text-align: center; background-color: black"; >
+
+    <video  autoplay  width="300" height="200" >
+        <source src="TheOpsions.mp4" type="video/mp4">
+    </video>
+
+    <h1>Employee Management Application</h1>
+</header>
+ <h2>Welcome to the Employee Management Application</h2>
+
+<section class="menu">
+<a th:href="@{/addANewEmployee}" >Add Employee</a>
+ <a th:href="@{/viewEmployee}" >Employee Database</a>
+</section>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List</title>
+    <link rel="shortcut icon" type="image/png" href="img/logo.png">
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"/>
+</head>
+<body>
+<header style="color:white; font-size: 20px;  text-align: center; background-color: black" ;>
+
+    <video autoplay width="300" height="200">
+        <source src="TheOpsions.mp4" type="video/mp4">
+    </video>
+    <h1>Employee Management Application</h1>
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/addANewEmployee}">Add Employee</a></li>
+        <li><a th:href="@{/viewEmployee}">Employee Database</a></li>
+
+    </ul>
+</header>
+
+<h2> Welcome to the Employee Database</h2>
+<div th:if="${allEmployees.empty}">
+    No employee in the database.
+</div>
+
+<div class="divForm">
+    <div th:unless="${allEmployees.empty}">
+        <table>
+            <tr>
+
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Department</th>
+                <th>Title</th>
+                <th>Operations</th>
+
+            </tr>
+
+            <tr th:each="employee: ${allEmployees}">
+
+                <td th:text="${employee.firstName}"></td>
+                <td th:text="${employee.lastName}"></td>
+                <td th:text="${employee.email}"></td>
+                <td th:text="${employee.phone}"></td>
+                <td th:text="${employee.department}"></td>
+                <td th:text="${employee.title}"></td>
+                <td ><a class="alink" href="" th:href="@{/edit/} + ${employee.id} ">Edit</a>
+                    <a class="alink" href="" th:href="@{/delete/} + ${employee.id} ">Delete</a></td>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
+
+
+</body>
+</html>

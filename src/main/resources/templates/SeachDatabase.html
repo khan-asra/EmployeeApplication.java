@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Database</title>
+    <link rel="shortcut icon" type="image/png" href="img/logo.png" >
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}"  />
+</head>
+<body>
+<header style="color:white; font-size: 20px;  text-align: center; background-color: black"; >
+    <video  autoplay  width="300" height="200" >
+        <source src="TheOpsions.mp4" type="video/mp4">
+    </video>
+    <h1>Employee Management Application</h1>
+</header>
+
+
+<form action="/action_page.php">
+    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+    <label for="vehicle1"> I have a bike</label><br>
+    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+    <label for="vehicle2"> I have a car</label><br>
+    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+    <label for="vehicle3"> I have a boat</label><br><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+    <link rel="shortcut icon" type="image/png" href="img/logo.png" >
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}" />
+</head>
+<body>
+<header style="color:white; font-size: 20px;  text-align: center; background-color: black"; >
+
+    <video  autoplay  width="300" height="200" >
+        <source src="TheOpsions.mp4" type="video/mp4">
+    </video>
+    <h1>Employee Management Application</h1>
+    <ul>
+        <li><a th:href="@{/}">Home</a></li>
+        <li><a th:href="@{/addANewEmployee}">Add Employee</a></li>
+        <li><a th:href="@{/viewEmployee}">Employee Database</a></li>
+
+    </ul>
+</header>
+<div class="divForm">
+<form action="#" th:action="@{/addEmployee}" method="post" th:object="${employee}">
+    <h2>Enter the details of the Employee</h2>
+    <label>First name</label>
+    <input th:type="text" th:field="*{firstName}"/>
+    <br>
+
+    <label>Last name</label>
+    <input th:type="text" th:field="*{lastName}"/>
+    <br>
+    <label>Email</label>
+    <input th:type="email" th:field="*{email}"/>
+    <br>
+    <label> Phone</label>
+    <input th:type="text" th:field="*{phone}">
+    <br>
+    <label> Department</label>
+    <select th:field="*{department}">
+        <option th:each="department:*{ALLDEPARTMENTS}"
+                th:value="${department}" th:text="${department}">
+    </select>
+    <br>
+    <label> Title</label>
+    <input th:type="text" th:field="*{title}">
+    <br>
+    <hr>
+    <input class="subBut" type="submit" th:value="Submit">
+</form>
+</div>
+</body>
+</html>
